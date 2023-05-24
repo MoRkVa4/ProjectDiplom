@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Главная страница
+{% endblock title %}
+
+
+{% block content %}
+<div class="container" style="background-color: rgb(106, 110, 106, 0.8);">
+    <div class="row p-4">
+        <div class="col-12">
+            <h2 class="text-black text-center p-2 fw-medium" style="font-family: cursive;">
+                Новости
+            </h2>
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'image/9.jpg' %}" style="width: 900px; height: 550px;" class="d-block w-100"
+                             alt="...">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'image/`10.jpg' %}" style="width: 900px; height: 550px;"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'image/11.jpg' %}" style="width: 900px; height: 550px;"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block content1 %}
+<div class="container mt-5 mb-5 pb-5" style="background-color: rgb(106, 110, 106, 0.8);">
+    <h2 class="text-black text-center p-2 fw-medium" style="font-family: cursive;">
+        Рекомендации
+    </h2>
+    <div class="d-flex justify-content-between">
+        <div class="row row-cols-1 row-cols-md-4 g-3">
+            {% for product in products %}
+            <div class="col ms-5" style="width: 170px;">
+                <div class="card pt-3">
+                    <img src="{{ product.image }}" style="width: 120px; height: 160px;" class="rounded mx-auto d-block"
+                         alt="...">
+                    <div class="card-body">
+                        <h5 class="text-center"><a href="#" class="text-decoration-none">{{ product.title }}</a></h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock content1 %}
+
+

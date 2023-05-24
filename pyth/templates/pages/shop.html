@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Главная страница
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container" style="background-color: rgb(106, 110, 106, 0.8);">
+        <div class="row">
+            <div class="col-2" style="padding-top: 116px;">
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">asdsd</li>
+                </ul>
+
+            </div>
+            <div class="col-10 pt-5 pb-5">
+                <h2 class="text-black text-center p-2 fw-medium" style="font-family: cursive;">
+                    Рекомендации
+                </h2>
+
+                <div class="d-flex flex-wrap">
+                    {% for product in products %}
+                    <div class="card m-1" style="width: 170px;">
+                        <img src="../image/1.png" style="width: 120px; height: 160px;" class="rounded mx-auto d-block"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="text-center"><a href="#" class="text-decoration-none">Card title</a></h5>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block content1 %}
+    <div class="container mt-5" style="background-color: rgb(106, 110, 106, 0.8);">
+        <div class="col-12 p-2">
+            <h2 class="text-black text-center p-2 fw-medium" style="font-family: cursive;">
+                Рекомендации 2
+            </h2>
+
+            <div class="d-flex flex-wrap">
+                <div class="card m-1" style="width: 170px;">
+                    <img src="{{ product.image.url }}" style="width: 120px; height: 160px;" class="rounded mx-auto d-block" alt="...">
+                    <div class="card-body">
+                        <h5 class="text-center"><a href="detail.html" class="text-decoration-none">{{ product.title }}</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content1 %}
+
+
